@@ -1,4 +1,4 @@
-**Vehicle Detection Project**
+#Vehicle Detection Project
 
 The goals/steps of this project are the following:
 
@@ -10,14 +10,13 @@ The goals/steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 
-#1. Generated additional data
+##1. Generated additional data
 We felt the lack of black car images may affect the performance of the classifier. So we used additional black-car images data. We scaled, translated, flipped the images to avoid overfitting the data. 200 such images were generated and added to the vehicles folders
 The code can be found in gen_data.py
 
-#2. Load the images
+##2. Load the images
 All the images from the vehicles and non-vehicles folder were loaded. It was resized into 64x64 and converted to vehicles.
 ```python
-
 #read images from file names and resizes to 64,64
 def data_read_images_from_files(file_names):
     images = [];
@@ -36,7 +35,7 @@ non_car.dump("non_car_images.dat")
 Example of Car - Non-Car
 ![Alt text](output_images/car-non-car.png?raw=true "car and non car images")
 
-#3.Feature extraction
+##3.Feature extraction
 This was an iterative process during the developmental lifecycle of the project. The function we used for feature extraction was
 
 ```python
@@ -121,7 +120,7 @@ visualisation of hog features - Non-car Image
 
 The code can be found in extract_features.py
 
-#4. Data pre-processing for SVM
+##4. Data pre-processing for SVM
 Once the hog features were extracted, the hog features of car and non-car were stacked. A prediction  vector for car( =1 ) and non-car (=0) was created.
 
 ```python
@@ -149,7 +148,7 @@ X_train, X_valid, y_train, y_valid = train_test_split(
 ```
 The code can be found in train.py
 
-#5. Training SVM
+##5. Training SVM
 
 Once the data was preprocessed, we used the default SVM to train the classifier as flows.
 
@@ -163,7 +162,7 @@ The SVM model and the scaling matrix was saved.
 
 
 
-#6. Method for detection
+##6. Method for detection
 
 The code can be found in pipeline.py
 
@@ -214,7 +213,7 @@ Below is the visualisation of sliding window
 ![Alt text](output_images/algo_vis.png?raw=true "Visualisation of the pipeline")
 
 
-#7.Output
+##7.Output
 The output video youtube link
 [![Output](output_images/youtube_output.png?raw=true)](https://youtu.be/snArg2ai6vA)
 
@@ -222,7 +221,7 @@ The output1.avi file contains the vehicle detection video. Here's a [link to my 
 
 ---
 
-#7.Discussion
+##8.Discussion
 
 There is a number of issues with this method.
 1. I have hand tuned the parameters (features, hog, color-histogram, spatial-histogram) to make this work. A deep neural network based features extraction is the way to go.
