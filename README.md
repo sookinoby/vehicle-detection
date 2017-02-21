@@ -215,7 +215,7 @@ Below is the visualisation of sliding window
 
 
 #7.Output
-he output for the first track is 
+The output video youtube link
 [![Output](output_images/youtube_output.png?raw=true)](https://youtu.be/snArg2ai6vA)
 
 The output1.avi file contains the vehicle detection video. Here's a [link to my video result](output/output1.avi)
